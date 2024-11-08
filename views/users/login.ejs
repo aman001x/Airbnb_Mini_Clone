@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<div class="row mt-5 mb-4 col-8 offset-2" style="border: 1px solid rgb(51, 19, 210);">
+    <h2 class="text-center mt-1" style="color: #182fc5; ">Login</h2>
+    <div class="col-8 offset-2">
+        <form action="/login" method="POST" class="needs-validation" novalidate  >
+            <label for="username" class="form-label">Username</label><br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-plus fa-xl" style="color: #005eff;"></i></span>
+                <input type="text" name="username" class="form-control"id="username" placeholder="Enter Name" aria-label="Username" aria-describedby="basic-addon1" required>
+              </div>
+
+
+
+
+
+              
+              <label for="password" class="form-label">Password</label><br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-unlock fa-xl" style="color: #2235c9;"></i></span>
+                <input type="password" name="password" class="form-control"id="email" placeholder="Enter Paasword" aria-label="Username" aria-describedby="basic-addon1" required>
+              </div>
+
+              <button class="btn btn-primary mt-3 mb-5 px-3 ">Login</button>
+
+        </form>
+
+    </div>
+</div>    

@@ -1,0 +1,61 @@
+
+
+
+<style>
+  .btn-search{
+    background-color: #d8175e;
+    color: white;
+    border-radius: 18px;
+    padding: 0 1rem 0 1rem;
+  }
+  .btn-search:hover{
+    background-color: #f50d62;
+    color: #ffffff;
+  }
+  .btn-search i{
+    display: inline;
+    margin-right: 0.7rem;
+  }
+  .search-input{
+    border-radius: 18px;
+    border: 1px solid black;
+  }
+
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-solid fa-compass fa-xl" style="color: #f50d62;"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <b><a class="nav-link fs-5" aria-current="page" href="/">Explore</a></b> -->
+        <b><a class="nav-link fs-4" href="/listings">Explore</a></b>
+        
+        
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-input" type="search" placeholder="     Search Destination" id="searchInput" oninput="searchListings()" >
+          <button class="btn btn-search" type="submit"  onclick="searchListings()"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>Search</button>
+        </form>
+      </div>
+      <div class="listingsContainer"></div>
+
+      <div class="navbar-nav ms-auto fs-5">
+        <a class="nav-link nav-link1" href="/listings/new">Add New Listings</a>
+        <% if(!currUser) { %>
+        <a class="nav-link nav-link1" aria-current="page" href="/signup"><i class="fa-regular fa-id-card fa-lg" style="color: #2226f5;"></i> SignUp</a>
+        <a class="nav-link nav-link1" href="/login"><i class="fa-solid fa-right-to-bracket fa-lg" style="color: #0f5adb;"></i> Login</a>
+        <% } %>
+        <% if(currUser) { %>
+        <a class="nav-link nav-link1" href="/logout"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #105ce0;"></i> Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+<script src="../../views/users/searchlist.js"></script>
+
+  

@@ -1,0 +1,62 @@
+
+    <% layout("/layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-8 offset-2">
+
+        
+
+    
+    
+    <h3> Edit your Listing Listing</h3>
+    <form method="POST"  action="/listings/<%=listing._id.toString().trim()%>?_method=PUT" enctype="multipart/form-data">
+        <!-- action="/listings/<%=listing._id %> ?_method= PUT" -->
+
+        <div class="mb-3">
+            <label for="title" class="form-label"><b>Title</b></label>
+            <input class="form-control" type="text" name ="listing[title]"  placeholder="Enter title" value="<%= listing.title %> ">
+        </div>
+
+
+    <div class="mb-3">
+        <label for="title" class="form-label"><b>Description</b></label>
+        <textarea name ="listing[description]" class="form-control" ><%= listing.description %></textarea>
+    </div>
+
+
+    <!-- <div class="mb-3">
+
+        <label for="image" class="form-label">Image URL/Link</label>
+        <input  class="form-control" type="text" name ="listing[image]"    value="<%= listing.image %>" placeholder="url of image">
+    </div> -->
+
+    <div class="mb-3">
+
+        <label for="image" class="form-label"> Upload Image</label>
+        <input  class="form-control" type="file" name ="listing[image]"    placeholder="url of image">
+    </div>
+    <div class="row">
+
+    
+    <div class="mb-3 col-md-4">
+
+        <label for="price" class="form-label"><b>Price</b></label>
+        <input class="form-control" type="number"  name ="listing[price]"   value="<%= listing.price %>">
+    </div>
+    <div class="mb-3 col-md-8">
+        <label for="location" class="form-label"><b>Location</b></label>
+        <input class="form-control" type="text" name ="listing[location]"   value="<%= listing.location %>">
+
+    </div>
+</div>
+    <div class="mb-3">
+
+        <label for="country" class="form-label"><b>Country</b></label>
+        <input class="form-control" type="text" name ="listing[country]"  placeholder="enter country"  value="<%= listing.country %>">
+    </div>
+    <button class="btn btn-success mb-3 px-3">Edit</button>
+    </form>
+</div>
+</div>
+    
+</body>
+

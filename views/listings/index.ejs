@@ -1,0 +1,124 @@
+<%- layout("layouts/boilerplate") %> 
+<body>
+    <style>
+        #filters{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filter{
+            text-align: center;
+            margin-right: 2.8rem;
+            margin-top: 2rem;
+         
+        }
+        p{
+            font-size: 1.1rem;
+        }
+        .filter:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+    </style>
+
+    <div id="filters">
+        <div class="filter">
+           <div> <i class="fa-solid fa-fire fa-xl" style="color: #cd4907;"></i></div>
+            <p>Trending</p>
+
+        </div>
+        <div class="filter">
+            <div> <i class="fa-solid fa-bed fa-xl" style="color: #1198f2;"></i></div>
+             <p>Bed</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-mountain-city fa-xl" style="color: #e01492;"></i></div>
+             <p>Mountain</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-brands fa-fort-awesome fa-xl "></i></div>
+             <p>Fort</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-person-swimming  fa-xl " style="color: #1854bc;"></i></div>
+             <p>BeachFront</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-campground  fa-xl " style="color: #ef1515;"></i></div>
+             <p>Rooms</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-cow  fa-xl" style="color: #6a7988;"></i></div>
+             <p>Farm</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-snowflake fa-xl " style="color: #17bad0;"></i></div>
+             <p>Pools</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-tower-observation  fa-xl " style="color: #9fa715;"></i></div>
+             <p>Tower</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-person-skiing-nordic  fa-xl"></i></div>
+             <p>Swim</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-ship  fa-xl" style="color: #e70dd8;"></i></div>
+             <p>Boats</p>
+ 
+         </div>
+         <div class="filter">
+            <div> <i class="fa-solid fa-umbrella-beach fa-xl" style="color: #2e18d8;"></i></div>
+             <p>Island</p>
+ 
+         </div>
+    </div>
+    
+    <!-- <h2 class="mt-2 mb-2" style="color: rgb(28, 28, 174);">Wonderlust</h2> -->
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for(var listing of allListings){ %>
+            <a class="listing-link" href="/listings/<%= listing._id %>">
+                <div class="card col listing-card">
+                    <!-- Check if listing.image and listing.image.url exist -->
+                    <% if (listing.image && listing.image.url) { %>
+                        <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.title %>" style="height: 20rem;"/>
+                    <% } else { %>
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Default Image" style="height: 20rem;"/>
+                    <% } %>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <%= listing.title %> <br>
+                            &#8377 <%= listing.price.toLocaleString("en-IN") %>/Night
+                        </p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+
+    <!-- Uncomment this form if you want to include a button to create new listings -->
+    <!--
+    <form method="GET" action="/listings/new">
+        <button class="btn btn-primary">Create New Listing</button>
+    </form>
+    -->
+
+    <!-- Uncomment this section if you want to display a list of all listings -->
+    <!--
+    <ul>
+        <% for(let listing of allListings){ %>
+            <li><a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
+        <% } %>
+    </ul>
+    -->
+    
+</body>
